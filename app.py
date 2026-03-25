@@ -1,4 +1,4 @@
-ffrom flask import Flask, request, render_template_string
+from flask import Flask, request, render_template_string
 import urllib.parse
 
 from DieselAlicante_v01 import (
