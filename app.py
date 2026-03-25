@@ -1,3 +1,4 @@
+from functools import lru_cache
 from flask import Flask, request, render_template_string
 import urllib.parse
 
