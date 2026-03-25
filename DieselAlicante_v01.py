@@ -29,8 +29,8 @@ NOMINATIM_SEARCH_URL = "https://nominatim.openstreetmap.org/search"
 RADIO_KM_POR_DEFECTO = 20.0
 ZOOM_POR_DEFECTO = 11
 
-@lru_cache(maxsize=100)
-def geocodificar_localidad(localidad):
+    @lru_cache(maxsize=100)
+    def geocodificar_localidad(localidad):
     ...
 """def geocodificar_localidad(localidad: str):
     
