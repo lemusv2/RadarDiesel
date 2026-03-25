@@ -29,9 +29,11 @@ NOMINATIM_SEARCH_URL = "https://nominatim.openstreetmap.org/search"
 RADIO_KM_POR_DEFECTO = 20.0
 ZOOM_POR_DEFECTO = 11
 
-
-def geocodificar_localidad(localidad: str):
-    """
+@lru_cache(maxsize=100)
+def geocodificar_localidad(localidad):
+    ...
+"""def geocodificar_localidad(localidad: str):
+    
     Convierte una localidad (o CP/dirección) en (lat, lon) usando Nominatim (OSM).
     Devuelve (lat, lon, display_name) o (None, None, None) si no hay resultados.
     """
