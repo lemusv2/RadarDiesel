@@ -9,6 +9,7 @@ Funcionalidad:
 - Pregunta si también se quieren ver los precios de Gasolina 95 y, en caso afirmativo,
   lista las 5 gasolineras más baratas y permite localizarlas también en Google Maps.
 """
+from datetime import datetime
 from functools import lru_cache
 import requests
 import xml.etree.ElementTree as ET
@@ -148,7 +149,8 @@ def obtener_gasolineras(url_xml: str):
         gasolineras.append((nombre, direccion, precio_diesel, precio_gas95))
 
     return gasolineras
-
+  
+print(f"\nConsulta realizada el: {fecha_hora_txt}")
 
 def mostrar_top(gasolineras, indice_precio: int, n: int, etiqueta: str, localidad: str):
     """
@@ -206,7 +208,8 @@ def abrir_en_maps(lista_gasolineras, mensaje: str, localidad: str):
     print(f"Abriendo en el navegador: {url_maps}")
     webbrowser.open(url_maps)
 
-
+momento_consulta = datetime.now()
+fecha_hora_txt = momento_consulta.strftime("%d/%m/%Y %H:%M:%S")
 def main():
     try:
         # Pedir una localidad/CP para centrar la búsqueda (si no, usamos Alicante por defecto)
