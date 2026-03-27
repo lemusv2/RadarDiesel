@@ -219,9 +219,9 @@ def index():
         except Exception as exc:  # noqa: BLE001
             error = f"Error al obtener datos: {exc}"
             
-from datetime import datetime
-fecha_consulta = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-
+    from datetime import datetime
+    fecha_consulta = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    
     return render_template_string(
         HTML_TEMPLATE,
         localidad=localidad,
