@@ -208,9 +208,9 @@ def abrir_en_maps(lista_gasolineras, mensaje: str, localidad: str):
 
 def main():
     try:
-      momento_consulta = datetime.now()
-      fecha_hora_txt = momento_consulta.strftime("%d/%m/%Y %H:%M:%S")
-      print(f"\nConsulta realizada el: {fecha_hora_txt}")
+        momento_consulta = datetime.now()
+        fecha_hora_txt = momento_consulta.strftime("%d/%m/%Y %H:%M:%S")
+        print(f"\nConsulta realizada el: {fecha_hora_txt}")
       
         # Pedir una localidad/CP para centrar la búsqueda (si no, usamos Alicante por defecto)
         localidad_input = input(
