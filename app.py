@@ -86,6 +86,10 @@ HTML_TEMPLATE = """
         <p class="msg">Zona: <strong>{{ zona_label }}</strong> (radio: {{ radio_km }} km)</p>
     {% endif %}
 
+    {% if fecha_consulta %}
+    <p class="msg">📅 Consulta: {{ fecha_consulta }}</p>
+    {% endif %}
+
     {% if resultados_diesel %}
     <div class="section">
         <h2>Top 5 Diésel (gasóleo A normal)</h2>
@@ -214,6 +218,9 @@ def index():
                         )
         except Exception as exc:  # noqa: BLE001
             error = f"Error al obtener datos: {exc}"
+            
+from datetime import datetime
+fecha_consulta = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
 
     return render_template_string(
         HTML_TEMPLATE,
@@ -224,6 +231,7 @@ def index():
         resultados_diesel=resultados_diesel,
         resultados_gas95=resultados_gas95,
         error=error,
+        fecha_consulta=fecha_consulta,
     )
 
 
