@@ -150,8 +150,6 @@ def obtener_gasolineras(url_xml: str):
 
     return gasolineras
   
-print(f"\nConsulta realizada el: {fecha_hora_txt}")
-
 def mostrar_top(gasolineras, indice_precio: int, n: int, etiqueta: str, localidad: str):
     """
     Ordena por el precio indicado (índice 2 -> diésel, índice 3 -> gasolina95),
@@ -208,10 +206,12 @@ def abrir_en_maps(lista_gasolineras, mensaje: str, localidad: str):
     print(f"Abriendo en el navegador: {url_maps}")
     webbrowser.open(url_maps)
 
-momento_consulta = datetime.now()
-fecha_hora_txt = momento_consulta.strftime("%d/%m/%Y %H:%M:%S")
 def main():
     try:
+      momento_consulta = datetime.now()
+      fecha_hora_txt = momento_consulta.strftime("%d/%m/%Y %H:%M:%S")
+      print(f"\nConsulta realizada el: {fecha_hora_txt}")
+      
         # Pedir una localidad/CP para centrar la búsqueda (si no, usamos Alicante por defecto)
         localidad_input = input(
             "Introduce una localidad o código postal (Enter para Alicante): "
