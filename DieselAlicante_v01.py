@@ -9,7 +9,7 @@ Funcionalidad:
 - Pregunta si también se quieren ver los precios de Gasolina 95 y, en caso afirmativo,
   lista las 5 gasolineras más baratas y permite localizarlas también en Google Maps.
 """
-
+from functools import lru_cache
 import requests
 import xml.etree.ElementTree as ET
 import urllib.parse
