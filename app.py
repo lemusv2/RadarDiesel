@@ -232,7 +232,7 @@ fecha_consulta = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
         resultados_gas95=resultados_gas95,
         error=error,
         fecha_consulta=fecha_consulta,
-    )
+             )
 
 
 if __name__ == "__main__":
